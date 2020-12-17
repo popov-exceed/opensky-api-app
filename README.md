@@ -1,5 +1,5 @@
 # Demo of the app
-Curently site is deployed at https://popov-exceed.github.io/opensky-api-app/
+Currently site is deployed at https://popov-exceed.github.io/opensky-api-app/
 
 # How to start project
 
