@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/opensky-api-app/static/css/main.02c97dfa.chunk.css",
+    "main.js": "/opensky-api-app/static/js/main.3567a146.chunk.js",
+    "main.js.map": "/opensky-api-app/static/js/main.3567a146.chunk.js.map",
+    "runtime-main.js": "/opensky-api-app/static/js/runtime-main.a98c66c1.js",
+    "runtime-main.js.map": "/opensky-api-app/static/js/runtime-main.a98c66c1.js.map",
+    "static/css/2.7676ade7.chunk.css": "/opensky-api-app/static/css/2.7676ade7.chunk.css",
+    "static/js/2.32b4a10a.chunk.js": "/opensky-api-app/static/js/2.32b4a10a.chunk.js",
+    "static/js/2.32b4a10a.chunk.js.map": "/opensky-api-app/static/js/2.32b4a10a.chunk.js.map",
+    "static/js/3.0297d879.chunk.js": "/opensky-api-app/static/js/3.0297d879.chunk.js",
+    "static/js/3.0297d879.chunk.js.map": "/opensky-api-app/static/js/3.0297d879.chunk.js.map",
+    "index.html": "/opensky-api-app/index.html",
+    "static/css/2.7676ade7.chunk.css.map": "/opensky-api-app/static/css/2.7676ade7.chunk.css.map",
+    "static/css/main.02c97dfa.chunk.css.map": "/opensky-api-app/static/css/main.02c97dfa.chunk.css.map",
+    "static/js/2.32b4a10a.chunk.js.LICENSE.txt": "/opensky-api-app/static/js/2.32b4a10a.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a98c66c1.js",
+    "static/css/2.7676ade7.chunk.css",
+    "static/js/2.32b4a10a.chunk.js",
+    "static/css/main.02c97dfa.chunk.css",
+    "static/js/main.3567a146.chunk.js"
+  ]
+}
