@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/opensky-api-app/static/css/main.02c97dfa.chunk.css",
-    "main.js": "/opensky-api-app/static/js/main.3567a146.chunk.js",
-    "main.js.map": "/opensky-api-app/static/js/main.3567a146.chunk.js.map",
+    "main.js": "/opensky-api-app/static/js/main.5dc3d426.chunk.js",
+    "main.js.map": "/opensky-api-app/static/js/main.5dc3d426.chunk.js.map",
     "runtime-main.js": "/opensky-api-app/static/js/runtime-main.a98c66c1.js",
     "runtime-main.js.map": "/opensky-api-app/static/js/runtime-main.a98c66c1.js.map",
     "static/css/2.7676ade7.chunk.css": "/opensky-api-app/static/css/2.7676ade7.chunk.css",
@@ -20,6 +20,6 @@
     "static/css/2.7676ade7.chunk.css",
     "static/js/2.32b4a10a.chunk.js",
     "static/css/main.02c97dfa.chunk.css",
-    "static/js/main.3567a146.chunk.js"
+    "static/js/main.5dc3d426.chunk.js"
   ]
 }
