@@ -4,6 +4,9 @@ import { HOUR, TEST_TIMESTAMP } from './constants';
 export const api = axios.create({
   responseType: 'json',
   baseURL: 'https://opensky-network.org/api',
+  headers: {
+    'Content-Type': 'application/json'
+  }
 });
 
 export const authorize = async (username, password) => {
@@ -17,9 +20,6 @@ export const authorize = async (username, password) => {
 
 const getAllflights = async (username, password, begin, end) => {
   return api.get(`/flights/all`, {
-    header: {
-      'Access-Control-Allow-Origin': '*',
-    },
     params: {
       begin,
       end,

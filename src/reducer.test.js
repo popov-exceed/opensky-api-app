@@ -12,7 +12,6 @@ describe('Reducer /UPDATE action', () => {
   it('App State should be idle', () => {
     expect(reducer({ ...initialState, appState: 'test' }, actions.update()).appState).toEqual('idle');
   });
-
 });
 
 describe('Reducer /FETCH_FLIGHTS actions', () => {
@@ -137,7 +136,6 @@ describe('Reducer /LOGOUT action', () => {
 });
 
 describe('Reducer /AUTHORIZE actions', () => {
-
   describe('/AUTHORIZE/PENDING action', () => {
     it('Should change App State to loading', () => {
       expect(reducer(initialState, actions.authorizePending()).appState).toEqual('loading');
@@ -163,7 +161,6 @@ describe('Reducer /AUTHORIZE actions', () => {
         error: null,
       });
     });
-
   });
 
   describe('/AUTHORIZE/SUCCESS action', () => {
@@ -179,39 +176,35 @@ describe('Reducer /AUTHORIZE actions', () => {
       expect(reducer({ ...initialState, appState: 'test' }, actions.authorizeSuccess({})).appState).toEqual('idle');
     });
     it('Should change username field to username in payload', () => {
-      expect(
-        reducer(initialState, actions.authorizeSuccess({ username: 'test' })).username
-      ).toEqual('test');
+      expect(reducer(initialState, actions.authorizeSuccess({ username: 'test' })).username).toEqual('test');
     });
     it('Should change password field to password in payload', () => {
-      expect(
-        reducer(initialState, actions.authorizeSuccess({ password: 'test' })).password
-      ).toEqual('test');
-    })
+      expect(reducer(initialState, actions.authorizeSuccess({ password: 'test' })).password).toEqual('test');
+    });
   });
   describe('/AUTHORIZE/FAILURE', () => {
     it('Should handle /AUTHORIZE/FAILURE action', () => {
-      expect(reducer(initialState, actions.authorizeFailure({ message: 'test' }))).toEqual({
+      expect(reducer({ ...initialState, isAuthorized: true }, actions.authorizeFailure({ message: 'test' }))).toEqual({
         ...initialState,
         error: 'test',
         appState: 'failure',
       });
     });
-    it('Should change error to payload', () => {
+    it('Should change error to payload if isAuthorized', () => {
       expect(reducer(initialState, actions.authorizeFailure({ message: 'test' })).error).toEqual('test');
     });
     it('Should change app state to authFailure, if payload has 401 in message', () => {
-      expect(reducer(initialState, actions.authorizeFailure({ message: 'test401' })).appState).toEqual(
-        'authFailure'
-      );
+      expect(reducer(initialState, actions.authorizeFailure({ message: 'test401' })).appState).toEqual('authFailure');
+    });
+    it('Should change app state to authFailure, if user is not authorized', () => {
+      expect(reducer(initialState, actions.authorizeFailure({ message: 'test' })).appState).toEqual('authFailure');
     });
     it('Should change isAuthorized to false, if payload has 401 in message', () => {
       expect(
-        reducer({ ...initialState, isAuthorized: true }, actions.authorizeFailure({ message: 'test401' }))
-          .isAuthorized
+        reducer({ ...initialState, isAuthorized: true }, actions.authorizeFailure({ message: 'test401' })).isAuthorized
       ).toBeFalsy();
     });
-    it("Should change app state to failure, if payload haven't 401 in message", () => {
+    it("Should change app state to failure, if payload haven't 401 in message and authorized", () => {
       expect(reducer(initialState, actions.authorizeFailure({ message: 'test' })).appState).toEqual('failure');
     });
   });

@@ -52,13 +52,20 @@ export const reducer = createReducer(initialState, (builder) => {
       state.error = null;
     }))
     .addMatcher(isFailureAction, ((state, action) => {
-      if (action.payload.message.includes('401')) {
-        state.appState = 'authFailure';
-        state.isAuthorized = false;
-        state.error = 'Username or password are not valid';
-      } else {
-        state.appState = 'failure';
-        state.error = action.payload.message;
+      switch (true) {
+        case action.payload.message.includes('401'):
+          state.appState = 'authFailure';
+          state.isAuthorized = false;
+          state.error = 'Username or password are not valid';
+          break;
+        case !state.isAuthorized:
+          state.error = 'Username or password are not valid or there is a server problem';
+          state.appState = 'authFailure';
+          state.isAuthorized = false;
+          break;
+        default:
+          state.appState = 'failure';
+          state.error = action.payload.message;
       }
     }));
 });
